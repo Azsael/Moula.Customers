@@ -1,0 +1,28 @@
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit(form.value, form.valid)">
+	<mat-form-field>
+		<input matInput type="text" placeholder="First Name" formControlName="firstName" />
+		<mat-error>First Name is required</mat-error>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input matInput type="text" placeholder="Last Name" formControlName="lastName" />
+		<mat-error>Last Name is required</mat-error>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input matInput type="email" placeholder="Email" formControlName="email" />
+		<mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+		<mat-error *ngIf="hasError('email', 'email')">Email is invalid.</mat-error>
+	</mat-form-field>
+
+	<mat-form-field>
+		<mat-datepicker-toggle matPrefix [for]="dateOfBirth"></mat-datepicker-toggle>
+		<input matInput [matDatepicker]="dateOfBirth" placeholder="Date Of Birth" formControlName="dateOfBirth" (click)="dateOfBirth.open()" />
+		<mat-datepicker #dateOfBirth></mat-datepicker>
+	</mat-form-field>
+
+	<div>
+		<a routerLink=".." mat-button>Cancel</a>
+		<button type="submit" mat-raised-button color="primary" [disabled]="isSubmitting">Create Customer</button>
+	</div>
+</form> 

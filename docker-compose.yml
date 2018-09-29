@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  moula.customers.api:
+    image: ${DOCKER_REGISTRY}moulacustomersapi
+    build:
+      context: .
+      dockerfile: Moula.Customers.API/Dockerfile
