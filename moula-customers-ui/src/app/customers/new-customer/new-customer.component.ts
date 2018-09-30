@@ -45,7 +45,7 @@ export class NewCustomerComponent implements OnInit {
   }
 }
 
-export const StandardErrorMessage = 'An unknown error occurred, please try again.';
+export const StandardErrorMessage = 'An error occurred, please try again.';
 
 export function handleServerValidation(error: HttpErrorResponse, form?: FormGroup): string {
   if (!error || !error.error) { return StandardErrorMessage; }

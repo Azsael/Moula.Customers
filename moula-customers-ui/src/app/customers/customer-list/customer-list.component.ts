@@ -7,7 +7,7 @@ import { CustomerService, Customer } from '../customer.service';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
-	public displayedColumns = ['name'];
+  public displayedColumns = ['fullName', 'email', 'dateOfBirth', 'customerCode'];
   public customers: Customer[];
 
   constructor(private _cs: CustomerService) { }

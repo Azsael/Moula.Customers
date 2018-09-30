@@ -21,8 +21,9 @@
 		<mat-datepicker #dateOfBirth></mat-datepicker>
 	</mat-form-field>
 
+	<mat-error *ngIf="error">{{error}}</mat-error>
 	<div>
 		<a routerLink=".." mat-button>Cancel</a>
 		<button type="submit" mat-raised-button color="primary" [disabled]="isSubmitting">Create Customer</button>
 	</div>
-</form> 
+</form>

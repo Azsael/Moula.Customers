@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Moula.Customers.Entities.Context;
+[assembly: InternalsVisibleTo("Moula.Customers.Entities.Tests")]
 
 namespace Moula.Customers.Entities.Ioc
 {

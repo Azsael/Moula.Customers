@@ -15,6 +15,7 @@ export class Customer {
 
   firstName: string;
   lastName: string;
+  fullName: string;
   email: string;
   dateOfBirth?: Date;
 }

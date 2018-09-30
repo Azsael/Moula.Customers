@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -8,7 +7,7 @@ using Moula.Common.Extensions;
 
 namespace Moula.Common.Filters
 {
-	public class UnhandledExceptionFilter : IAsyncExceptionFilter
+	public class UnhandledExceptionFilter : IExceptionFilter
 	{
 		private readonly IHostingEnvironment _hostingEnvironment;
 		private readonly ILogger _logger;
@@ -19,7 +18,7 @@ namespace Moula.Common.Filters
 			_logger = logger;
 		}
 
-		public async Task OnExceptionAsync(ExceptionContext context)
+		public void OnException(ExceptionContext context)
 		{
 			var errorMessage = $"Unhandled Exception. Action: {context.ActionDescriptor.DisplayName} Url: {context.HttpContext.Request.GetAbsoluteUri()}, Method: {context.HttpContext.Request.Method}";
 
